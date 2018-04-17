@@ -100,24 +100,27 @@ const ItemAll = []
    displayhtml += `<div class="container"><div class="row fp-row-items">`
    // if(category = all){}
    ItemAll.forEach(function(item){                                           //add itemID and link to item
-     let image = "./src/image/defaultflex.jpg"
-     if (item.image != ""){image = item.image}
-     let itemhtml = `<div class="col-md-3" align="center" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
-     itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
-     itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
-     //////
-     let shortTitle= ""
-     if(item.title){
-       if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
-       else {shortTitle= item.title}
-       itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
-     }
-     //////
-     itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
-     itemhtml += `</div>`
-     displayhtml += itemhtml
-   })//forEach
-   displayhtml += `</div></div>` //close container and row
+    if(category == "all" || category == item.category.name.toLowerCase()){
+       let image = "./src/image/defaultflex.jpg"
+       if (item.image != ""){image = item.image}
+       let itemhtml = `<div class="col-md-3" align="center" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
+       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
+       itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
+       //////
+       let shortTitle= ""
+       if(item.title){
+         if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
+         else {shortTitle= item.title}
+         itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
+       }
+       //////
+       itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
+       itemhtml += `</div>`
+       displayhtml += itemhtml
+     }//end if category == all
+
+     })//forEach
+     displayhtml += `</div></div>` //close container and row
    document.querySelector('#main').innerHTML = ""
    document.querySelector('#main').innerHTML += displayhtml
    addEventListenerFrontPageItems()
