@@ -51,6 +51,26 @@
      console.log("ItemAll");
      console.log(ItemAll);
      // debugger
+     displayItems()
    }
+   /////////////////////////////////////////////////////////////////////////////display
+   function displayItems(category="all"){
+     let displayhtml = ""
+     displayhtml += `<div class="container"><div class="row">`
+     // if(category = all){}
+     ItemAll.forEach(function(item){                                           //add itemID and link to item
+       let image = "./src/image/defaultflex.jpg"
+       if (item.image != ""){image = item.image}
+       let itemhtml = `<div class="col-md-3">`
+       itemhtml += `<img src="${image}">`
+       itemhtml += `<br>${item.title}`
+       itemhtml += `<br>${item.price}`
+       itemhtml += `</div>`
+       displayhtml += itemhtml
+     })//forEach
+     displayhtml += `</div></div>` //close container and row
+     document.querySelector('#main').innerHTML = ""
+     document.querySelector('#main').innerHTML += displayhtml
+   }//display
 
  })//document.addEventListener
