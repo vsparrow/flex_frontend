@@ -101,5 +101,15 @@ const ItemAll = []
    let item = ItemAll.find(item => item.id == id)
    console.log(item);
    //clear main
+   let main = document.querySelector("#main")
+   let itemhtml = ""
+   main.innerHTML = ""
+   itemhtml += `<div class="container"><div class="row">`
+   let image = "./src/image/defaultflex.jpg"
+   if (item.image != ""){image = item.image}
+   itemhtml += `<div class="col-md-6"><img src="${image}" class="img-responsive"></div>`
+   // itemhtml += `<div class="col-md-12"><img src="${image}" class=""></div>`
+   itemhtml += `</div></div>` //close container and row
    //display on main
+   main.innerHTML = itemhtml
  }
