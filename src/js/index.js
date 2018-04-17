@@ -4,7 +4,8 @@ const ItemAll = []
  document.addEventListener('DOMContentLoaded', function(){
    console.log("HI");
    addEventListenerSiteTitle()                                                  ////////move to addEventListener.js
-   addEventListenerNavCategoryButton()
+   // addEventListenerNavCategoryButton()
+   addEventListenerNavContainer()
    /////////////////////////////////////////////////////////////////////////////fetch move to adapter
    const urlbase = "http://127.0.0.1:3000/api/v1/"
    let url = urlbase + "categories"
@@ -145,7 +146,33 @@ function addEventListenerNavCategoryButton(){
    })
  }//addEventListenerFrontPageItems
 
-//////////////
+
+////////////////////////////////////////////////////////////////////////////addEventListener to navbar container items
+function addEventListenerNavContainer(){
+  let nc = document.querySelector(".navbar .container")
+  nc.addEventListener("click",function(e){
+    // console.log(e);
+    // console.log(e.target.getAttribute("id"));
+    // console.log(e.target.innerText);
+    navWasClicked(e.target.innerText)
+  })
+}
+
+
+// //////////////
 function  navShowCategories(){
   console.log("HI");
 }
+
+function navWasClicked(text){
+  text=text.toLowerCase()
+  console.log(text);
+  switch(text){
+    case "categories":
+    navShowCategories();
+    break;
+    default:
+      //do nothing
+      console.log("NOTHING WILL HAPPEN");
+  }//end switch
+}//navWasClicked
