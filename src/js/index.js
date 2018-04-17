@@ -44,7 +44,7 @@ const ItemAll = []
          //chose category.id over an instance below because question:
          // is it a pointer to the instance? or a new instance? It is the pointer
          //because CategoryAll[0] === ItemAll[0].category is true
-         let newItem = new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price) //////////////ADD DESCRIPTION BY SENDING IT VIA JSON  THEN ADDD TO HERE
+         let newItem = new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description) //////////////ADD DESCRIPTION BY SENDING IT VIA JSON  THEN ADDD TO HERE
        })//forEach item
      })//forEach category aka category
      console.log("CategoryAll");
@@ -117,8 +117,11 @@ const ItemAll = []
    itemhtml +=  `<br><span>${item.title}</span>`
    itemhtml +=  `<br><span>SIZE: ${item.size}</span>`
    itemhtml +=  `<br><span style="font-size: 1.25em"><strong>$${item.price}</strong></span>`
+   itemhtml += `<br><br><br><br><br>`
+   itemhtml += `<p>DESCRIPTION</p>`
+   itemhtml += `<p style="font-size:.9em">${item.description}</p>`
    // itemhtml += `<span></span>`
-   itemhtml += `</div>`
+   itemhtml += `</div>` //end col-md-4
    // itemhtml += `<div class="col-md-12"><img src="${image}" class=""></div>`
    itemhtml += `</div></div>` //close container and row
    //display on main
