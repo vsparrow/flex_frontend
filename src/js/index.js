@@ -62,9 +62,9 @@
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
        let itemhtml = `<div class="col-md-3">`
-       itemhtml += `<img src="${image}" class="img-responsive">`               
-       itemhtml += `<br>${item.title}`
-       itemhtml += `<br>${item.price}`
+       itemhtml += `<img src="${image}" class="img-responsive">`
+       itemhtml += `<br>${item.brand}`
+       itemhtml += `<br>$${item.price}`
        itemhtml += `</div>`
        displayhtml += itemhtml
      })//forEach
