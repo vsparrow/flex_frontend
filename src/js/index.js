@@ -56,7 +56,7 @@
    /////////////////////////////////////////////////////////////////////////////display
    function displayItems(category="all"){
      let displayhtml = ""
-     displayhtml += `<div class="container"><div class="row">`
+     displayhtml += `<div class="container"><div class="row fp-row-items">`
      // if(category = all){}
      ItemAll.forEach(function(item){                                           //add itemID and link to item
        let image = "./src/image/defaultflex.jpg"
@@ -79,9 +79,15 @@
      displayhtml += `</div></div>` //close container and row
      document.querySelector('#main').innerHTML = ""
      document.querySelector('#main').innerHTML += displayhtml
+     addEventListenerFrontPageItems()
    }//display
     ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
     function addEventListenerFrontPageItems(){
-
+      let fp = document.querySelector(".fp-row-items")
+      fp.addEventListener("click",function(e){
+        console.log("Clicked");
+        console.log(e.target);
+        console.log(e.target.class);
+      })
     }//addEventListenerFrontPageItems
  })//document.addEventListener
