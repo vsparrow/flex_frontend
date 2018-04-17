@@ -61,7 +61,7 @@
      ItemAll.forEach(function(item){                                           //add itemID and link to item
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
-       let itemhtml = `<div class="col-md-3">`
+       let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px">`  //move style to css
        itemhtml += `<img src="${image}" class="img-responsive">`
        itemhtml += `<br>${item.brand}`
        itemhtml += `<br>$${item.price}`
