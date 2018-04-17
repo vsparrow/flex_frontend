@@ -86,9 +86,11 @@ const ItemAll = []
     function addEventListenerFrontPageItems(){
       let fp = document.querySelector(".fp-row-items")
       fp.addEventListener("click",function(e){
-        console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
+        // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
         // console.log(e.target);
-        console.log(e.target.getAttribute("data-fp-grid-item"));
+        // console.log(e.target.getAttribute("data-fp-grid-item"));
+        let id = e.target.getAttribute("data-fp-grid-item")
+        if(id){displayItem(id)}
       })
     }//addEventListenerFrontPageItems
 
