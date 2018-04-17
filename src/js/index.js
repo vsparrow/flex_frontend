@@ -100,22 +100,25 @@ const ItemAll = []
    displayhtml += `<div class="container"><div class="row fp-row-items">`
    // if(category = all){}
    ItemAll.forEach(function(item){                                           //add itemID and link to item
-     let image = "./src/image/defaultflex.jpg"
-     if (item.image != ""){image = item.image}
-     let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
-     itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
-     itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
-     //////
-     let shortTitle= ""
-     if(item.title){
-       if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
-       else {shortTitle= item.title}
-       itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
-     }
-     //////
-     itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
-     itemhtml += `</div>`
-     displayhtml += itemhtml
+     if(category == "all" || category == item.category.name.toLowerCase()){ //
+       // debugger
+       let image = "./src/image/defaultflex.jpg"
+       if (item.image != ""){image = item.image}
+       let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
+       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
+       itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
+       //////
+       let shortTitle= ""
+       if(item.title){
+         if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
+         else {shortTitle= item.title}
+         itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
+       }
+       //////
+       itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
+       itemhtml += `</div>`
+       displayhtml += itemhtml
+     }//end if category == all
    })//forEach
    displayhtml += `</div></div>` //close container and row
    document.querySelector('#main').innerHTML = ""
@@ -204,10 +207,12 @@ function navWasClicked(text, dataAttribute){
   } //end if dataAttribute == default
   else if (dataAttribute == "category") {
     //add switch here or do something to display all items from a category
-    showItemsInCategory(dataAttribute)
+    showItemsInCategory(text)
   } //end if dataAttribute == category
 }//navWasClicked
 /////////////////////////////////////////////////////////////////////////////   display
 function showItemsInCategory(category){
   console.log("DO THIS --- showItemsInCategory() --- but in a branch for show or items ");
+  // debugger
+  displayItems(category)
 }
