@@ -3,7 +3,8 @@ const ItemAll = []
 
  document.addEventListener('DOMContentLoaded', function(){
    console.log("HI");
-   addEventListenerSiteTitle()
+   addEventListenerSiteTitle()                                                  ////////move to addEventListener.js
+   addEventListenerNavCategoryButton()
    /////////////////////////////////////////////////////////////////////////////fetch move to adapter
    const urlbase = "http://127.0.0.1:3000/api/v1/"
    let url = urlbase + "categories"
@@ -125,7 +126,12 @@ const ItemAll = []
      displayItems()
    })
  }
-
+ //////////////////////////////////////////////////////////////////////////////addEventListenerCategories
+function addEventListenerNavCategoryButton(){
+  document.querySelector("#nav-button-category").addEventListener("click",function(){
+    navShowCategories()
+  })
+}
 
  ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
  function addEventListenerFrontPageItems(){
@@ -138,3 +144,8 @@ const ItemAll = []
      if(id){displayItem(id)}
    })
  }//addEventListenerFrontPageItems
+
+//////////////
+function  navShowCategories(){
+  console.log("HI");
+}
