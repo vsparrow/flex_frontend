@@ -159,11 +159,20 @@ function addEventListenerNavContainer(){
 }
 
 
-// //////////////
+// /////////////////////////////////////////////////////////////////////////////display?.js
 function  navShowCategories(){
   console.log("HI navShowCategories");
+  let buttons = document.querySelector(".nav-pills")
+  console.log(buttons.innerHTML)
+  let buttonhtml = ""
+  CategoryAll.forEach(function(category){
+    buttonhtml += `<li role="presentation" class="active" data-button="category"><a href="#">${category.name}</a></li>`
+  })
+  buttons.innerHTML = ""
+  buttons.innerHTML = buttonhtml
 }
-
+/////////////////////////////////////////////////////////////////////////////   addEventListener.js
+/////////////////////////////////////////////////////////////////////////////
 function navWasClicked(text){
   text=text.toLowerCase()
   console.log(text);
