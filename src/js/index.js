@@ -94,6 +94,7 @@ const ItemAll = []
  }
  /////////////////////////////////////////////////////////////////////////////displayItems
  function displayItems(category="all"){
+   navShowDefault() //reset navbar buttons if changed
    let displayhtml = ""
    displayhtml += `<div class="container"><div class="row fp-row-items">`
    // if(category = all){}
@@ -160,6 +161,19 @@ function addEventListenerNavContainer(){
 
 
 // /////////////////////////////////////////////////////////////////////////////display?.js
+
+function navShowDefault(){
+  let buttons = document.querySelector(".nav-pills")
+  let buttonhtml = ""
+  buttonhtml = `
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation" class="active"><a href="#">Profile</a></li>
+  <li role="presentation" class="active" id="nav-button-category"><a href="#">Categories</a></li>
+  <li role="presentation" class="active"><a href="#">Items</a></li>`
+  buttons.innerHTML = buttonhtml
+}
+// /////////////////////////////////////////////////////////////////////////////display?.js
+
 function  navShowCategories(){
   console.log("HI navShowCategories");
   let buttons = document.querySelector(".nav-pills")
