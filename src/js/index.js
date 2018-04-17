@@ -62,17 +62,17 @@
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
        let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
-       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}">`
-       itemhtml += `<br><strong>${item.brand}</strong>`
+       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
+       itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
        //////
        let shortTitle= ""
        if(item.title){
          if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
          else {shortTitle= item.title}
-         itemhtml += `<br><span style="font-size: .9em">${shortTitle}</span>`
+         itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
        }
        //////
-       itemhtml += `<br>$${item.price}`
+       itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
        itemhtml += `</div>`
        displayhtml += itemhtml
      })//forEach
@@ -85,9 +85,9 @@
     function addEventListenerFrontPageItems(){
       let fp = document.querySelector(".fp-row-items")
       fp.addEventListener("click",function(e){
-        console.log("Clicked");
-        console.log(e.target);
-        console.log(e.target.class);
+        console.log("Clicked grid item: id below:");
+        // console.log(e.target);
+        console.log(e.target.getAttribute("data-fp-grid-item"));
       })
     }//addEventListenerFrontPageItems
  })//document.addEventListener
