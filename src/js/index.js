@@ -204,12 +204,14 @@ function navWasClicked(text, dataAttribute){
   } //end if dataAttribute == default
   else if (dataAttribute == "category") {
     //add switch here or do something to display all items from a category
-    showItemsInCategory(dataAttribute)
+    showItemsInCategory(text)
   } //end if dataAttribute == category
 }//navWasClicked
 /////////////////////////////////////////////////////////////////////////////   display
 function showItemsInCategory(category){
   console.log("DO THIS --- showItemsInCategory() --- but in a branch for show or items ");
+  // debugger
+  displayItems(category)
 }
 
 
