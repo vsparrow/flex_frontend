@@ -155,7 +155,7 @@ function addEventListenerNavContainer(){
     // console.log(e);
     console.log(e.target.getAttribute("data-button"));
     // console.log(e.target.innerText);
-    navWasClicked(e.target.innerText)
+    navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
   })
 }
 
@@ -187,16 +187,21 @@ function  navShowCategories(){
 }
 /////////////////////////////////////////////////////////////////////////////   addEventListener.js
 /////////////////////////////////////////////////////////////////////////////
-function navWasClicked(text){
+function navWasClicked(text, dataAttribute){
   text=text.toLowerCase()
   console.log(text);
 
-  switch(text){
-    case "categories":
-    navShowCategories();
-    break;
-    default:
-      //do nothing
-      // console.log("NOTHING WILL HAPPEN");
-  }//end switch
+  if(dataAttribute == "default"){
+    switch(text){
+      case "categories":
+      navShowCategories();
+      break;
+      default:
+        //do nothing
+        // console.log("NOTHING WILL HAPPEN");
+    }//end switch
+  } //end if dataAttribute == default
+  else if (dataAttribute == "category") {
+    //add switch here or do something to display all items from a category
+  } //end if dataAttribute == category
 }//navWasClicked
