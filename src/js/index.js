@@ -61,8 +61,8 @@
      ItemAll.forEach(function(item){                                           //add itemID and link to item
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
-       let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px">`  //move style to css
-       itemhtml += `<img src="${image}" class="img-responsive">`
+       let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item-${item.id}>`  //move style to css
+       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item-${item.id}>`
        itemhtml += `<br><strong>${item.brand}</strong>`
        //////
        let shortTitle= ""
@@ -80,5 +80,8 @@
      document.querySelector('#main').innerHTML = ""
      document.querySelector('#main').innerHTML += displayhtml
    }//display
+    ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
+    function addEventListenerFrontPageItems(){
 
+    }//addEventListenerFrontPageItems
  })//document.addEventListener
