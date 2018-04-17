@@ -62,7 +62,7 @@
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
        let itemhtml = `<div class="col-md-3">`
-       itemhtml += `<img src="${image}">`
+       itemhtml += `<img src="${image}" class="img-responsive">`               
        itemhtml += `<br>${item.title}`
        itemhtml += `<br>${item.price}`
        itemhtml += `</div>`
