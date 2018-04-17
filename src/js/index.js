@@ -94,7 +94,8 @@ const ItemAll = []
  }
  /////////////////////////////////////////////////////////////////////////////displayItems
  function displayItems(category="all"){
-   navShowDefault() //reset navbar buttons if changed
+   // navShowDefault() //reset navbar buttons if changed
+   navShowCategories() //decided that best to display categories, as the logo would display home and items, and we dont have profile
    let displayhtml = ""
    displayhtml += `<div class="container"><div class="row fp-row-items">`
    // if(category = all){}
@@ -203,5 +204,10 @@ function navWasClicked(text, dataAttribute){
   } //end if dataAttribute == default
   else if (dataAttribute == "category") {
     //add switch here or do something to display all items from a category
+    showItemsInCategory(dataAttribute)
   } //end if dataAttribute == category
 }//navWasClicked
+/////////////////////////////////////////////////////////////////////////////   display
+function showItemsInCategory(category){
+  console.log("DO THIS --- showItemsInCategory() --- but in a branch for show or items ");
+}
