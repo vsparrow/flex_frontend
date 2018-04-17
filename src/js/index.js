@@ -102,7 +102,7 @@ const ItemAll = []
    ItemAll.forEach(function(item){                                           //add itemID and link to item
      let image = "./src/image/defaultflex.jpg"
      if (item.image != ""){image = item.image}
-     let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
+     let itemhtml = `<div class="col-md-3" align="center" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
      itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
      itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
      //////
@@ -211,3 +211,11 @@ function navWasClicked(text, dataAttribute){
 function showItemsInCategory(category){
   console.log("DO THIS --- showItemsInCategory() --- but in a branch for show or items ");
 }
+
+
+// Working picture upload
+// <form action="/action_page.php">
+//   <label for="exampleFormControlFile1">Upload a picture</label>
+//   <input type="file" name="pic" accept="image/*" class="form-control-file" id="exampleFormControlFile1">
+//   <input type="submit">
+// </form>
