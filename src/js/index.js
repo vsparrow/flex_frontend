@@ -64,6 +64,14 @@
        let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px">`  //move style to css
        itemhtml += `<img src="${image}" class="img-responsive">`
        itemhtml += `<br>${item.brand}`
+       //////
+       let shortTitle= ""
+       if(item.title){
+         if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
+         else {shortTitle= item.title}
+         itemhtml += `<br>${shortTitle}`
+       }
+       //////
        itemhtml += `<br>$${item.price}`
        itemhtml += `</div>`
        displayhtml += itemhtml
