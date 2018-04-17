@@ -1,3 +1,6 @@
+const CategoryAll = [];
+const ItemAll = []
+
  document.addEventListener('DOMContentLoaded', function(){
    console.log("HI");
    /////////////////////////////////////////////////////////////////////////////fetch move to adapter
@@ -6,7 +9,6 @@
    // fetch(url).then(res=>res.json()).then(json=>console.log(json))
    fetch(url).then(res=>res.json()).then(json=>parseJSONIntoClasses(json))
    /////////////////////////////////////////////////////////////////////////////class category, move to category.js
-   const CategoryAll = [];
    class Category{
      constructor(id,name){
       this.id=id;
@@ -17,7 +19,6 @@
      static all(){ return CategoryAll}
    }//Category
    /////////////////////////////////////////////////////////////////////////////class Item, move to Item.js
-   const ItemAll = []
    class Item{
      constructor(category,id,title,brand,image,size,price,description){
        this.category = category
@@ -90,4 +91,15 @@
         console.log(e.target.getAttribute("data-fp-grid-item"));
       })
     }//addEventListenerFrontPageItems
+
+
  })//document.addEventListener
+
+ ////////////////////////////////////////////////////////////////////////////displayItem **single
+ function displayItem(id){
+   //get item with id of id
+   let item = ItemAll.find(item => item.id == id)
+   console.log(item);
+   //clear main
+   //display on main
+ }
