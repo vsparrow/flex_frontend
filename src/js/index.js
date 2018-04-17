@@ -33,6 +33,7 @@ const ItemAll = []
      }//constructor
      static all(){return ItemAll}
    }//Item
+
    /////////////////////////////////////////////////////////////////////////////move to category.js ?????
    function parseJSONIntoClasses(json){
      console.log("THIS IS ALL JSON:");

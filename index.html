@@ -7,10 +7,52 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./src/js/index.js"></script>
+    <style media="screen">
+      /* body {padding-top: 40px; } */
+      .navbar-nav
+      {
+        width: 100%;
+        text-align: center;
+        > li
+        {
+          float: none;
+          display: inline-block;
+       }
+      }
+
+      .nav-center
+      {
+        text-align: center;
+      }
+      .nav-center ul.nav
+      {
+        display: inline-block;
+      }
+      .nav-center ul.nav li
+      {
+        display: inline a;
+        display-float: left;
+      }
+    </style>
   </head>
+
   <body>
+    <h1 class="text-center"> FLEX </h1>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="nav-center">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation" class="active"><a href="#">Profile</a></li>
+            <li role="presentation" class="active"><a href="#">Categories</a></li>
+            <li role="presentation" class="active"><a href="#">Items</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="" id="main">
 
     </div>
+
   </body>
 </html>
