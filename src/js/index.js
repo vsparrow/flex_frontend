@@ -153,7 +153,7 @@ function addEventListenerNavContainer(){
   let nc = document.querySelector(".navbar .container")
   nc.addEventListener("click",function(e){
     // console.log(e);
-    // console.log(e.target.getAttribute("id"));
+    console.log(e.target.getAttribute("data-button"));
     // console.log(e.target.innerText);
     navWasClicked(e.target.innerText)
   })
@@ -166,10 +166,10 @@ function navShowDefault(){
   let buttons = document.querySelector(".nav-pills")
   let buttonhtml = ""
   buttonhtml = `
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation" class="active" id="nav-button-category"><a href="#">Categories</a></li>
-  <li role="presentation" class="active"><a href="#">Items</a></li>`
+  <li role="presentation" class="active" ><a href="#" data-button="default">Home</a></li>
+  <li role="presentation" class="active" ><a href="#" data-button="default">Profile</a></li>
+  <li role="presentation" class="active" ><a href="#" data-button="default">Categories</a></li>
+  <li role="presentation" class="active" ><a href="#" data-button="default">Items</a></li>`
   buttons.innerHTML = buttonhtml
 }
 // /////////////////////////////////////////////////////////////////////////////display?.js
@@ -180,7 +180,7 @@ function  navShowCategories(){
   console.log(buttons.innerHTML)
   let buttonhtml = ""
   CategoryAll.forEach(function(category){
-    buttonhtml += `<li role="presentation" class="active" data-button="category"><a href="#">${category.name}</a></li>`
+    buttonhtml += `<li role="presentation" class="active" ><a href="#" data-button="category">${category.name}</a></li>`
   })
   buttons.innerHTML = ""
   buttons.innerHTML = buttonhtml
@@ -190,6 +190,7 @@ function  navShowCategories(){
 function navWasClicked(text){
   text=text.toLowerCase()
   console.log(text);
+
   switch(text){
     case "categories":
     navShowCategories();
