@@ -69,7 +69,7 @@
        if(item.title){
          if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
          else {shortTitle= item.title}
-         itemhtml += `<br>${shortTitle}`
+         itemhtml += `<br><span style="font-size: .9em">${shortTitle}</span>`
        }
        //////
        itemhtml += `<br>$${item.price}`
