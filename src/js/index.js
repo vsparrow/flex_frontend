@@ -2,7 +2,7 @@ const CategoryAll = [];
 const ItemAll = []
 
  document.addEventListener('DOMContentLoaded', function(){
-   console.log("HI");
+   // console.log("HI");
    addEventListenerSiteTitle()                                                  ////////move to addEventListener.js
    // addEventListenerNavCategoryButton()
    addEventListenerNavContainer()
@@ -39,8 +39,8 @@ const ItemAll = []
 
    /////////////////////////////////////////////////////////////////////////////move to category.js ?????
    function parseJSONIntoClasses(json){
-     console.log("THIS IS ALL JSON:");
-     console.log(json);
+     // console.log("THIS IS ALL JSON:");
+     // console.log(json);
      json.forEach(function(category){
        let newCategory = new Category(category.id,category.name)
        category.items.forEach(function(item){
@@ -50,10 +50,10 @@ const ItemAll = []
          let newItem = new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description) //////////////ADD DESCRIPTION BY SENDING IT VIA JSON  THEN ADDD TO HERE
        })//forEach item
      })//forEach category aka category
-     console.log("CategoryAll");
-     console.log(CategoryAll.length)
+     // console.log("CategoryAll");
+     // console.log(CategoryAll.length)
      console.log(CategoryAll)
-     console.log("ItemAll");
+     // console.log("ItemAll");
      console.log(ItemAll);
      // debugger
      displayItems()
@@ -161,7 +161,7 @@ function addEventListenerNavContainer(){
 
 // //////////////
 function  navShowCategories(){
-  console.log("HI");
+  console.log("HI navShowCategories");
 }
 
 function navWasClicked(text){
@@ -173,6 +173,6 @@ function navWasClicked(text){
     break;
     default:
       //do nothing
-      console.log("NOTHING WILL HAPPEN");
+      // console.log("NOTHING WILL HAPPEN");
   }//end switch
 }//navWasClicked
