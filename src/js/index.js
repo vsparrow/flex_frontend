@@ -3,6 +3,7 @@ const ItemAll = []
 
  document.addEventListener('DOMContentLoaded', function(){
    console.log("HI");
+   addEventListenerSiteTitle()
    /////////////////////////////////////////////////////////////////////////////fetch move to adapter
    const urlbase = "http://127.0.0.1:3000/api/v1/"
    let url = urlbase + "categories"
@@ -55,45 +56,7 @@ const ItemAll = []
      // debugger
      displayItems()
    }
-   /////////////////////////////////////////////////////////////////////////////display
-   function displayItems(category="all"){
-     let displayhtml = ""
-     displayhtml += `<div class="container"><div class="row fp-row-items">`
-     // if(category = all){}
-     ItemAll.forEach(function(item){                                           //add itemID and link to item
-       let image = "./src/image/defaultflex.jpg"
-       if (item.image != ""){image = item.image}
-       let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
-       itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
-       itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
-       //////
-       let shortTitle= ""
-       if(item.title){
-         if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
-         else {shortTitle= item.title}
-         itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
-       }
-       //////
-       itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
-       itemhtml += `</div>`
-       displayhtml += itemhtml
-     })//forEach
-     displayhtml += `</div></div>` //close container and row
-     document.querySelector('#main').innerHTML = ""
-     document.querySelector('#main').innerHTML += displayhtml
-     addEventListenerFrontPageItems()
-   }//display
-    ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
-    function addEventListenerFrontPageItems(){
-      let fp = document.querySelector(".fp-row-items")
-      fp.addEventListener("click",function(e){
-        // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
-        // console.log(e.target);
-        // console.log(e.target.getAttribute("data-fp-grid-item"));
-        let id = e.target.getAttribute("data-fp-grid-item")
-        if(id){displayItem(id)}
-      })
-    }//addEventListenerFrontPageItems
+
 
 
  })//document.addEventListener
@@ -127,3 +90,51 @@ const ItemAll = []
    //display on main
    main.innerHTML = itemhtml
  }
+ /////////////////////////////////////////////////////////////////////////////displayItems
+ function displayItems(category="all"){
+   let displayhtml = ""
+   displayhtml += `<div class="container"><div class="row fp-row-items">`
+   // if(category = all){}
+   ItemAll.forEach(function(item){                                           //add itemID and link to item
+     let image = "./src/image/defaultflex.jpg"
+     if (item.image != ""){image = item.image}
+     let itemhtml = `<div class="col-md-3" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
+     itemhtml += `<img src="${image}" class="img-responsive" data-fp-image-item="${item.id}" data-fp-grid-item="${item.id}">`
+     itemhtml += `<br><strong data-fp-grid-item="${item.id}">${item.brand}</strong>`
+     //////
+     let shortTitle= ""
+     if(item.title){
+       if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
+       else {shortTitle= item.title}
+       itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
+     }
+     //////
+     itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
+     itemhtml += `</div>`
+     displayhtml += itemhtml
+   })//forEach
+   displayhtml += `</div></div>` //close container and row
+   document.querySelector('#main').innerHTML = ""
+   document.querySelector('#main').innerHTML += displayhtml
+   addEventListenerFrontPageItems()
+ }//display
+  //////////////////////////////////////////////////////////////////////////////addEventListenerSiteTitle
+ function addEventListenerSiteTitle(){
+   document.querySelector("#site-title").addEventListener("click",function(){
+     // console.log("Title clicked");
+     displayItems()
+   })
+ }
+
+
+ ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
+ function addEventListenerFrontPageItems(){
+   let fp = document.querySelector(".fp-row-items")
+   fp.addEventListener("click",function(e){
+     // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
+     // console.log(e.target);
+     // console.log(e.target.getAttribute("data-fp-grid-item"));
+     let id = e.target.getAttribute("data-fp-grid-item")
+     if(id){displayItem(id)}
+   })
+ }//addEventListenerFrontPageItems
