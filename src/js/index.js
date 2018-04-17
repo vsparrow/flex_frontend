@@ -85,7 +85,7 @@
     function addEventListenerFrontPageItems(){
       let fp = document.querySelector(".fp-row-items")
       fp.addEventListener("click",function(e){
-        console.log("Clicked grid item: id below:");
+        console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
         // console.log(e.target);
         console.log(e.target.getAttribute("data-fp-grid-item"));
       })
