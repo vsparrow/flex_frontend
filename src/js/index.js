@@ -109,7 +109,7 @@ const ItemAll = []
        //////
        let shortTitle= ""
        if(item.title){
-         if (item.title.length > 40){ shortTitle= item.title.substring(0,37)+"..."}  //move to own function?
+         if (item.title.length > 40){ shortTitle= item.title.substring(0,32)+"..."}  //move to own function?
          else {shortTitle= item.title}
          itemhtml += `<br><span data-fp-grid-item="${item.id}" style="font-size: .9em">${shortTitle}</span>`
        }
