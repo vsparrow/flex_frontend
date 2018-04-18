@@ -52,9 +52,9 @@ const ItemAll = []
      })//forEach category aka category
      // console.log("CategoryAll");
      // console.log(CategoryAll.length)
-     console.log(CategoryAll)
+     // console.log(CategoryAll)
      // console.log("ItemAll");
-     console.log(ItemAll);
+     // console.log(ItemAll);
      // debugger
      displayItems()
    }
@@ -67,12 +67,12 @@ const ItemAll = []
  function displayItem(id){
    //get item with id of id
    let item = ItemAll.find(item => item.id == id)
-   console.log(item);
+   // console.log(item);
    //clear main
    let main = document.querySelector("#main")
    let itemhtml = ""
    main.innerHTML = ""
-   itemhtml += `<div class="container"><div class="row">`
+   itemhtml += `<div class="container itemContainer"><div class="row">`
    let image = "./src/image/defaultflex.jpg"
    if (item.image != ""){image = item.image}
    itemhtml += `<div class="col-md-6"><img src="${image}" class="img-responsive"></div>`
@@ -122,7 +122,7 @@ const ItemAll = []
        itemhtml += `</div><!-- END COL-->`
        displayhtml += itemhtml
        if (count == 3){displayhtml += `<br></div><!-- END ROW-->`}
-       console.log("count is :" +count);
+       // console.log("count is :" +count);
        ++count;
        if (count == 4){ count = 0}
      }//end if category == all
@@ -149,7 +149,8 @@ function addEventListenerNavCategoryButton(){
 
  ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
  function addEventListenerFrontPageItems(){
-   let fp = document.querySelector(".fp-row-items")
+   // let fp = document.querySelector(".fp-row-items")
+   let fp = document.querySelector("#main")
    fp.addEventListener("click",function(e){
      // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
      // console.log(e.target);
@@ -165,7 +166,7 @@ function addEventListenerNavContainer(){
   let nc = document.querySelector(".navbar .container")
   nc.addEventListener("click",function(e){
     // console.log(e);
-    console.log(e.target.getAttribute("data-button"));
+    // console.log(e.target.getAttribute("data-button"));
     // console.log(e.target.innerText);
     navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
   })
