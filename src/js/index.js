@@ -97,10 +97,14 @@ const ItemAll = []
    // navShowDefault() //reset navbar buttons if changed
    navShowCategories() //decided that best to display categories, as the logo would display home and items, and we dont have profile
    let displayhtml = ""
-   displayhtml += `<div class="container"><div class="row fp-row-items">`
+   // displayhtml += `<div class="container"><div class="row fp-row-items">`
+   displayhtml += `<div class="container">` //
    // if(category = all){}
+   let count = 0
    ItemAll.forEach(function(item){                                           //add itemID and link to item
+
     if(category == "all" || category == item.category.name.toLowerCase()){
+      if(count==0){displayhtml += `<div class="row fp-row-items">`}
        let image = "./src/image/defaultflex.jpg"
        if (item.image != ""){image = item.image}
        let itemhtml = `<div class="col-md-3" align="center" style="padding-top: 15px; padding-bottom: 15px" data-fp-grid-item="${item.id}">`  //move style to css
@@ -115,12 +119,16 @@ const ItemAll = []
        }
        //////
        itemhtml += `<br><span data-fp-grid-item="${item.id}">$${item.price}</span>`
-       itemhtml += `</div>`
+       itemhtml += `</div><!-- END COL-->`
        displayhtml += itemhtml
+       if (count == 3){displayhtml += `<br></div><!-- END ROW-->`}
+       console.log("count is :" +count);
+       ++count;
+       if (count == 4){ count = 0}
      }//end if category == all
 
      })//forEach
-     displayhtml += `</div></div>` //close container and row
+     displayhtml += `</div><!-- CLOSE CONTAINER -->` //close container and row
    document.querySelector('#main').innerHTML = ""
    document.querySelector('#main').innerHTML += displayhtml
    addEventListenerFrontPageItems()
