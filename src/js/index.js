@@ -141,44 +141,44 @@
  //   document.querySelector('#main').innerHTML += displayhtml
  //   addEventListenerFrontPageItems()
  // }//display
-  //////////////////////////////////////////////////////////////////////////////addEventListenerSiteTitle
- function addEventListenerSiteTitle(){
-   document.querySelector("#site-title").addEventListener("click",function(){
-     // console.log("Title clicked");
-     displayItems()
-   })
- }
- //////////////////////////////////////////////////////////////////////////////addEventListenerCategories
-function addEventListenerNavCategoryButton(){
-  document.querySelector("#nav-button-category").addEventListener("click",function(){
-    navShowCategories()
-  })
-}
+ //  //////////////////////////////////////////////////////////////////////////////addEventListenerSiteTitle
+ // function addEventListenerSiteTitle(){
+ //   document.querySelector("#site-title").addEventListener("click",function(){
+ //     // console.log("Title clicked");
+ //     displayItems()
+ //   })
+ // }
+//  //////////////////////////////////////////////////////////////////////////////addEventListenerCategories
+// function addEventListenerNavCategoryButton(){
+//   document.querySelector("#nav-button-category").addEventListener("click",function(){
+//     navShowCategories()
+//   })
+// }
 
- ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
- function addEventListenerFrontPageItems(){
-   // let fp = document.querySelector(".fp-row-items")
-   let fp = document.querySelector("#main")
-   fp.addEventListener("click",function(e){
-     // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
-     // console.log(e.target);
-     // console.log(e.target.getAttribute("data-fp-grid-item"));
-     let id = e.target.getAttribute("data-fp-grid-item")
-     if(id){displayItem(id)}
-   })
- }//addEventListenerFrontPageItems
+ // ////////////////////////////////////////////////////////////////////////////addEventListener to frontpage items
+ // function addEventListenerFrontPageItems(){
+ //   // let fp = document.querySelector(".fp-row-items")
+ //   let fp = document.querySelector("#main")
+ //   fp.addEventListener("click",function(e){
+ //     // console.log("addEventListenerFrontPageItems: Clicked grid item: id below:");
+ //     // console.log(e.target);
+ //     // console.log(e.target.getAttribute("data-fp-grid-item"));
+ //     let id = e.target.getAttribute("data-fp-grid-item")
+ //     if(id){displayItem(id)}
+ //   })
+ // }//addEventListenerFrontPageItems
 
 
-////////////////////////////////////////////////////////////////////////////addEventListener to navbar container items
-function addEventListenerNavContainer(){
-  let nc = document.querySelector(".navbar .container")
-  nc.addEventListener("click",function(e){
-    // console.log(e);
-    // console.log(e.target.getAttribute("data-button"));
-    // console.log(e.target.innerText);
-    navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
-  })
-}
+// ////////////////////////////////////////////////////////////////////////////addEventListener to navbar container items
+// function addEventListenerNavContainer(){
+//   let nc = document.querySelector(".navbar .container")
+//   nc.addEventListener("click",function(e){
+//     // console.log(e);
+//     // console.log(e.target.getAttribute("data-button"));
+//     // console.log(e.target.innerText);
+//     navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
+//   })
+// }
 
 
 // /////////////////////////////////////////////////////////////////////////////display?.js
