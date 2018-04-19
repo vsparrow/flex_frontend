@@ -15,6 +15,7 @@ function addEventListenerNavContainer(){
   // let nc = document.querySelector(".navbar .container")
   let nc = document.querySelector(".nav-links")
   nc.addEventListener("click",function(e){
+    console.log("addEventListenerNavContainer");
     navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
   })
 }
@@ -28,6 +29,8 @@ function addEventListenerSiteTitle(){
 ////////////////////////////////////////////////////////////////////////////////sort buttons
 function addEventListenerToSortButtons(){
   document.querySelector('#sortHigh').addEventListener("click",function(e){
+    console.log("addEventListenerToSortButtons");
+    console.log(e.target);
     sortItemsByPrice("high")
   })
   document.querySelector('#sortLow').addEventListener("click",function(e){
