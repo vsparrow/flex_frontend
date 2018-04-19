@@ -1,4 +1,4 @@
-const CategoryAll = [];
+// const CategoryAll = [];
 const ItemAll = []
 
  document.addEventListener('DOMContentLoaded', function(){
@@ -12,15 +12,15 @@ const ItemAll = []
    // fetch(url).then(res=>res.json()).then(json=>console.log(json))
    fetch(url).then(res=>res.json()).then(json=>parseJSONIntoClasses(json))
    /////////////////////////////////////////////////////////////////////////////class category, move to category.js
-   class Category{
-     constructor(id,name){
-      this.id=id;
-      this.name=name;
-      this.items = [];
-      CategoryAll.push(this)
-     }//constructor
-     static all(){ return CategoryAll}
-   }//Category
+   // class Category{
+   //   constructor(id,name){
+   //    this.id=id;
+   //    this.name=name;
+   //    this.items = [];
+   //    CategoryAll.push(this)
+   //   }//constructor
+   //   static all(){ return CategoryAll}
+   // }//Category
    /////////////////////////////////////////////////////////////////////////////class Item, move to Item.js
    class Item{
      constructor(category,id,title,brand,image,size,price,description){
