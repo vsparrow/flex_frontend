@@ -1,4 +1,4 @@
-// /////////////////////////////////////////////////////////////////////////////display?.js
+// /////////////////////////////////////////////////////////////////////////////navShowDefault
 
 function navShowDefault(){
   let buttons = document.querySelector(".nav-pills")
@@ -10,12 +10,10 @@ function navShowDefault(){
   <li role="presentation" class="active" ><a href="#" data-button="default">Items</a></li>`
   buttons.innerHTML = buttonhtml
 }
-// /////////////////////////////////////////////////////////////////////////////display?.js
+// /////////////////////////////////////////////////////////////////////////////navShowCategories
 
 function  navShowCategories(){
-  console.log("HI navShowCategories");
   let buttons = document.querySelector(".nav-pills")
-  console.log(buttons.innerHTML)
   let buttonhtml = ""
   CategoryAll.forEach(function(category){
     buttonhtml += `<li role="presentation" class="active" ><a href="#" data-button="category">${category.name}</a></li>`
@@ -23,12 +21,9 @@ function  navShowCategories(){
   buttons.innerHTML = ""
   buttons.innerHTML = buttonhtml
 }
-/////////////////////////////////////////////////////////////////////////////   addEventListener.js
-/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////navWasClicked
 function navWasClicked(text, dataAttribute){
   text=text.toLowerCase()
-  console.log(text);
-
   if(dataAttribute == "default"){
     switch(text){
       case "categories":
@@ -41,7 +36,6 @@ function navWasClicked(text, dataAttribute){
   } //end if dataAttribute == default
   else if (dataAttribute == "category") {
     //add switch here or do something to display all items from a category
-    // showItemsInCategory(text)
     displayItems(text)
   } //end if dataAttribute == category
 }//navWasClicked
