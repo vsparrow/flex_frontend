@@ -16,30 +16,40 @@
     <script type="text/javascript" src="./src/js/index.js"></script>
     <style media="screen">
       body {padding-top: 65px; }
-      /* .navbar-nav
-      {
-        width: 100%;
-        text-align: center;
-        > li
-        {
-          float: none;
-          display: inline-block;
-       }
-      }
 
-      .nav-center
-      {
-        text-align: center;
+    .navbar-brand {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0px;
+    }
+    .navbar-brand:before {
+      content: ' ';
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      animation: slide 1s linear infinite;
+      transform: rotate(30deg);
+    }
+    .navbar-brand {
+      height: 50px;
+      font-size: 40px;
+      /* background-color: white; */
+      background-color: black;
+      width: 200px;
+    }
+    @keyframes slide {
+      from {
+        left: -10px;
+        /* background: rgba(255, 255, 255, 0.5); */
+        background: rgba(0, 0, 0, 0.5);
       }
-      .nav-center ul.nav
-      {
-        display: inline-block;
+      to {
+        left: 190px;
+        /* background: rgba(255, 255, 255, 0.5); */
+        background: rgba(0, 0, 0, 0.5);
       }
-      .nav-center ul.nav li
-      {
-        display: inline a;
-        display-float: left;
-      } */
+    }
     </style>
   </head>
 
