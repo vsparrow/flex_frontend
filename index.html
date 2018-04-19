@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./src/js/category.js"></script>
     <script type="text/javascript" src="./src/js/display.js"></script>
@@ -13,8 +15,8 @@
     <script type="text/javascript" src="./src/js/navbar.js"></script>
     <script type="text/javascript" src="./src/js/index.js"></script>
     <style media="screen">
-      /* body {padding-top: 40px; } */
-      .navbar-nav
+      body {padding-top: 65px; }
+      /* .navbar-nav
       {
         width: 100%;
         text-align: center;
@@ -37,7 +39,7 @@
       {
         display: inline a;
         display-float: left;
-      }
+      } */
     </style>
   </head>
 
@@ -47,8 +49,8 @@
        <input type="file" name="pic" accept="image/*" class="form-control-file" id="exampleFormControlFile1">
        <input type="submit">
     </form> -->
-    <h1 class="text-center" id="site-title"> FLEX </h1>
-    <nav class="navbar navbar-default">
+    <!-- <h1 class="text-center" id="site-title"> FLEX </h1> -->
+    <!-- <nav class="navbar navbar-default">
       <div class="container">
         <div class="nav-center">
           <ul class="nav nav-pills">
@@ -58,29 +60,40 @@
             <li role="presentation" class="active"><a href="#">Items</a></li>
           </ul>
           <ul class="nav nav-pills" style=" position: absolute; top: 0px; right: 0px;">
-            <!-- <li role="presentation" class="active"><a href="#">something</a></li> -->
             <li role="presentation" class="active"><a href="#" id="sortHigh" style="  top: 0px; right: 0px;">Sort $ High</a></li>
             <li role="presentation" class="active"><a href="#" id="sortLow" style=" top: 0px; right: 0px;">Sort $ Low</a></li>
 
           </ul>
         </div>
       </div>
-    </nav>
-    <!-- <div class="" id="nav2">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="nav-center">
-            <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="#" id="sortHigh">Sort $ High</a></li>
-              <li role="presentation" class="active"><a href="#" id="sortLow">Sort $ Low</a></li>
-              <li role="presentation" class="active" id="nav-button-category"><a href="#">Sizes</a></li>
-              <li role="presentation" class="active"><a href="#">Designers</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div> -->
-     <!--END nav2 -->
+    </nav> -->
+<!-- *********************************************************** -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" id="site-title">FLEX</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav nav-links">
+        <li ><a  href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"id="sortHigh">Sort $ High</a></li>
+        <li><a href="#"id="sortLow">Sort $ Low</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
     <div class="" id="main">
 
     </div>

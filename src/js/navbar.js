@@ -13,7 +13,8 @@ function navShowDefault(){
 // /////////////////////////////////////////////////////////////////////////////navShowCategories
 
 function  navShowCategories(){
-  let buttons = document.querySelector(".nav-pills")
+  // let buttons = document.querySelector(".nav-pills")
+  let buttons = document.querySelector(".nav-links")
   let buttonhtml = ""
   CategoryAll.forEach(function(category){
     buttonhtml += `<li role="presentation" class="active" ><a href="#" data-button="category">${category.name}</a></li>`

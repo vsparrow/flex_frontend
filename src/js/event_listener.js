@@ -12,7 +12,8 @@ function addEventListenerFrontPageItems(){
 
 ////////////////////////////////////////////////////////////////////////////////addEventListenerNavContainer
 function addEventListenerNavContainer(){
-  let nc = document.querySelector(".navbar .container")
+  // let nc = document.querySelector(".navbar .container")
+  let nc = document.querySelector(".nav-links")
   nc.addEventListener("click",function(e){
     navWasClicked(e.target.innerText, e.target.getAttribute("data-button"))
   })
