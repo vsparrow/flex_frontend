@@ -69,3 +69,18 @@ function displayItems(category="all"){
   document.querySelector('#main').innerHTML += displayhtml
   addEventListenerFrontPageItems()
 }//display
+////////////////////////////////////////////////////////////////////////////////redisplay()
+//called by sortItemsByPrice()
+function redisplay(arrayOfElements){
+  let mainhtml = document.querySelector("#main .container")
+  displayhtml = ""
+  let count = 0;
+  arrayOfElements.forEach(function(el){
+    if(count==0){displayhtml += `<div class="row fp-row-items">`}
+    displayhtml += el.outerHTML
+    if (count == 3){displayhtml += `<br></div><!-- END ROW-->`}
+    ++count;
+    if (count == 4){ count = 0}
+  })
+  mainhtml.innerHTML = displayhtml
+}
