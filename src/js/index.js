@@ -12,7 +12,8 @@
      json.forEach(function(category){
        let newCategory = new Category(category.id,category.name)
        category.items.forEach(function(item){
-         let newItem = new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description) //////////////ADD DESCRIPTION BY SENDING IT VIA JSON  THEN ADDD TO HERE
+         let newItem =
+          new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description) 
        })//forEach item
      })//forEach category
      displayItems()
