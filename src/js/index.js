@@ -1,5 +1,5 @@
 // const CategoryAll = [];
-const ItemAll = []
+// const ItemAll = []
 
  document.addEventListener('DOMContentLoaded', function(){
    // console.log("HI");
@@ -22,20 +22,20 @@ const ItemAll = []
    //   static all(){ return CategoryAll}
    // }//Category
    /////////////////////////////////////////////////////////////////////////////class Item, move to Item.js
-   class Item{
-     constructor(category,id,title,brand,image,size,price,description){
-       this.category = category
-       this.id = id;
-       this.title = title;
-       this.brand = brand;
-       this.image = image;
-       this.size = size;
-       this.price = price;
-       this.description = description
-       ItemAll.push(this)
-     }//constructor
-     static all(){return ItemAll}
-   }//Item
+   // class Item{
+   //   constructor(category,id,title,brand,image,size,price,description){
+   //     this.category = category
+   //     this.id = id;
+   //     this.title = title;
+   //     this.brand = brand;
+   //     this.image = image;
+   //     this.size = size;
+   //     this.price = price;
+   //     this.description = description
+   //     ItemAll.push(this)
+   //   }//constructor
+   //   static all(){return ItemAll}
+   // }//Item
 
    /////////////////////////////////////////////////////////////////////////////move to category.js ?????
    function parseJSONIntoClasses(json){
