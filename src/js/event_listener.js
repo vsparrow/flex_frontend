@@ -15,11 +15,11 @@ function addEventListenerFrontPageItems(){
 }//addEventListenerFrontPageItems
 
 //////////////////////////////////////////////////////////////////////////////addEventListenerCategories
-function addEventListenerNavCategoryButton(){
- document.querySelector("#nav-button-category").addEventListener("click",function(){
-   navShowCategories()
- })
-}
+// function addEventListenerNavCategoryButton(){
+//  document.querySelector("#nav-button-category").addEventListener("click",function(){
+//    navShowCategories()
+//  })
+// }
 ////////////////////////////////////////////////////////////////////////////addEventListener to navbar container items
 function addEventListenerNavContainer(){
   let nc = document.querySelector(".navbar .container")
