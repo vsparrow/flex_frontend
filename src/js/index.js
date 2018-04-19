@@ -60,7 +60,14 @@ const ItemAll = []
    }
 
 
-
+//////////////////**************************************
+   document.querySelector('#sortHigh').addEventListener("click",function(e){
+     sortItemsByPrice("high")
+   })
+   document.querySelector('#sortLow').addEventListener("click",function(e){
+     sortItemsByPrice("low")
+   })
+//////////////////**************************************
  })//document.addEventListener
 
  ////////////////////////////////////////////////////////////////////////////displayItem **single
@@ -225,7 +232,44 @@ function showItemsInCategory(category){
   // debugger
   displayItems(category)
 }
+/////////////////////////////////////////////////////////////////////////////   display sort high
+function sortItemsByPrice(howtosort){
+  //get all col from page //add to array?
+  // howtosort = "high"
+  let allrows = document.querySelectorAll("#main .container .row .col-md-3")
+  // console.log(allrows);
+  let allrowsarray = Array.from(allrows)
+  console.log(allrowsarray);
+  console.log(allrowsarray[0].lastChild.innerText); //$1278
+  // allrowsarray.forEach(el => console.log(Number(el.lastChild.innerText.split("$").join(" ")) ))
+  //sort by price
+  let sortedArray = allrowsarray.sort(function(a,b){
+    // return Number(a.lastChild.innerText.split("$").join(" ")).localeCompare(Number(b.lastChild.innerText.split("$").join(" ")))
+    if(howtosort=="high"){
+      return  (Number(b.lastChild.innerText.split("$").join(" "))) -Number(a.lastChild.innerText.split("$").join(" "))
+    }
+    else {
+      return Number(a.lastChild.innerText.split("$").join(" ")) - (Number(b.lastChild.innerText.split("$").join(" ")))
+    }
+  })
+  console.log(sortedArray);
+  //redisplay
+  redisplay(sortedArray)
+}//end sortItemsByPrice
 
+function redisplay(arrayOfElements){
+  let mainhtml = document.querySelector("#main .container")
+  displayhtml = ""
+  let count = 0;
+  arrayOfElements.forEach(function(el){
+    if(count==0){displayhtml += `<div class="row fp-row-items">`}
+    displayhtml += el.outerHTML
+    if (count == 3){displayhtml += `<br></div><!-- END ROW-->`}
+    ++count;
+    if (count == 4){ count = 0}
+  })
+  mainhtml.innerHTML = displayhtml
+}
 
 // Working picture upload
 // <form action="/action_page.php">
