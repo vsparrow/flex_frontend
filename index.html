@@ -15,6 +15,8 @@
     <script type="text/javascript" src="./src/js/navbar.js"></script>
     <script type="text/javascript" src="./src/js/index.js"></script>
     <style media="screen">
+
+
       body {padding-top: 65px; }
     .navbar {background-color: black}
     .navbar-brand {
@@ -55,34 +57,49 @@
         background: rgba(0, 0, 0, 0.5);
       }
     }
+
+    @media (max-width: 810px) { /*to collapse navbar at 810px for ipad view*/
+        .navbar-header {
+            float: none;
+        }
+        .navbar-left,.navbar-right {
+            float: none !important;
+        }
+        .navbar-toggle {
+            display: block;
+        }
+        .navbar-collapse {
+            border-top: 1px solid transparent;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .navbar-fixed-top {
+            top: 0;
+            border-width: 0 0 1px;
+        }
+        .navbar-collapse.collapse {
+            display: none!important;
+        }
+        .navbar-nav {
+            float: none!important;
+            margin-top: 7.5px;
+        }
+        .navbar-nav>li {
+            float: none;
+        }
+        .navbar-nav>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .collapse.in{
+            display:block !important;
+        }
+    }
     </style>
+
   </head>
 
   <body>
-     <!-- <form action="/action_page.php">
-       <label for="exampleFormControlFile1">Upload a picture</label>
-       <input type="file" name="pic" accept="image/*" class="form-control-file" id="exampleFormControlFile1">
-       <input type="submit">
-    </form> -->
-    <!-- <h1 class="text-center" id="site-title"> FLEX </h1> -->
-    <!-- <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="nav-center">
-          <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation" class="active"><a href="#">Profile</a></li>
-            <li role="presentation" class="active" id="nav-button-category"><a href="#">Categories</a></li>
-            <li role="presentation" class="active"><a href="#">Items</a></li>
-          </ul>
-          <ul class="nav nav-pills" style=" position: absolute; top: 0px; right: 0px;">
-            <li role="presentation" class="active"><a href="#" id="sortHigh" style="  top: 0px; right: 0px;">Sort $ High</a></li>
-            <li role="presentation" class="active"><a href="#" id="sortLow" style=" top: 0px; right: 0px;">Sort $ Low</a></li>
 
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-<!-- *********************************************************** -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
