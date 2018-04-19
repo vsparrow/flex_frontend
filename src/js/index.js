@@ -6,6 +6,7 @@
    addEventListenerSiteTitle()                                                  ////////move to addEventListener.js
    // addEventListenerNavCategoryButton()
    addEventListenerNavContainer()
+   addEventListenerToSortButtons()
    /////////////////////////////////////////////////////////////////////////////fetch move to adapter
    const urlbase = "http://127.0.0.1:3000/api/v1/"
    let url = urlbase + "categories"
@@ -61,12 +62,12 @@
 
 
 //////////////////**************************************
-   document.querySelector('#sortHigh').addEventListener("click",function(e){
-     sortItemsByPrice("high")
-   })
-   document.querySelector('#sortLow').addEventListener("click",function(e){
-     sortItemsByPrice("low")
-   })
+   // document.querySelector('#sortHigh').addEventListener("click",function(e){
+   //   sortItemsByPrice("high")
+   // })
+   // document.querySelector('#sortLow').addEventListener("click",function(e){
+   //   sortItemsByPrice("low")
+   // })
 //////////////////**************************************
  })//document.addEventListener
 
