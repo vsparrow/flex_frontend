@@ -20,7 +20,6 @@ class Item{
 function sortItemsByPrice(howtosort){
   let allrows = document.querySelectorAll("#main .container .row .col-md-3")
   let allrowsarray = Array.from(allrows)
-  console.log(allrowsarray); //length 0
   if(allrowsarray.length > 0 ){
     let sortedArray = allrowsarray.sort(function(a,b){
       if(howtosort=="high"){
@@ -30,7 +29,6 @@ function sortItemsByPrice(howtosort){
         return Number(a.lastChild.innerText.split("$").join(" ")) - (Number(b.lastChild.innerText.split("$").join(" ")))
       }
     })
-    console.log("I am doing something");
     redisplay(sortedArray)
   }
 }//end sortItemsByPrice
