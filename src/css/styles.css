@@ -1,0 +1,77 @@
+body {
+  padding-top: 65px;
+  margin: 0px;
+}
+#search, #searchButton {
+  color: black
+}
+.navbar {
+  background-color: black
+}
+.navbar-brand {
+  box-sizing: border-box;
+}
+.navbar-brand:before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 10px;
+  height: 40px;
+  animation: slide 1s linear infinite;
+}
+.navbar-brand {
+  height: 50px;
+  font-size: 40px;
+  background-color: black;
+  width: 200px;
+  text-color: white
+}
+@keyframes slide {
+  from {
+    left: -10px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    left: 190px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 930px) { /*to collapse navbar at 810px for ipad view*/
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
