@@ -73,3 +73,20 @@ function redisplay(arrayOfElements){
   })
   mainhtml.innerHTML = displayhtml
 }
+////////////////////////////////////////////////////////////////////////////////displaySearchItems
+//called by Item:searchItems()
+function displaySearchItems(results,searchval=""){
+  let main = document.querySelector("#main")
+  main.innerHTML = ""
+  if (results.length == 0){
+    main.innerHTML = `<div class="container"><div class="row ">`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center"><i class="fa fa-exclamation-triangle "></i></h1>`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center">Redirecting To Home</h1>`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center; color: red">"${searchval}" Not Found</h1>`
+    main.innerHTML += `</div></div>`
+    setTimeout(function(){displayItems()},5000)
+  }
+  else {
+    displayItems("all",results) //display all items in results
+  }//else
+}//displaySearchItems

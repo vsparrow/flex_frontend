@@ -32,3 +32,21 @@ function sortItemsByPrice(howtosort){
     redisplay(sortedArray)
   }
 }//end sortItemsByPrice
+////////////////////////////////////////////////////////////////////////////////searchItems
+
+function searchItems(){
+  searchval = document.querySelector('#search').value
+  document.querySelector('#search').value = ""
+  console.log(searchval);
+  resultsArr = []
+  ItemAll.forEach(function(item){
+    if (
+    (item.title.toLowerCase().indexOf(searchval) >= 0) ||
+    (item.brand.toLowerCase().indexOf(searchval) >= 0) ||
+    (item.size.toLowerCase().indexOf(searchval) >=0) ||
+    (item.description.toLowerCase().indexOf(searchval) >= 0)
+    )
+    {resultsArr.push(item)}
+  })//forEach
+  displaySearchItems(resultsArr,searchval)
+}

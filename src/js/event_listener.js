@@ -34,3 +34,20 @@ function addEventListenerToSortButtons(){
     sortItemsByPrice("low")
   })
 }
+////////////////////////////////////////////////////////////////////////////////addEventListenerSearch
+
+function addEventListenerSearch(){
+  // add event_listener search input and button
+  let searchElement = document.querySelector("#search")
+  let searchButton = document.querySelector("#searchButton")
+
+  searchElement.addEventListener("keydown",function(e){
+    if(e.keyCode == 13){
+      searchItems()
+    }
+    //else do nothing
+  })
+  searchButton.addEventListener("click", function(){
+    searchItems()
+  })
+}//addEventListenerSearch
