@@ -25,6 +25,26 @@
     body {
       margin: 0px;
     }
+    /* .sorter:before {
+      content: ' ';
+      position: absolute;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 10px;
+      height: 40px;
+      animation: slide 1s linear infinite;
+      transform: rotate(0deg);
+    }
+    .sorter {
+      height: 50px;
+      font-size: 40px;
+      background-color: white;
+      background-color: black;
+      width: 200px;
+      text-color: white
+    } */
     .navbar-brand:before {
       content: ' ';
       /* position: absolute; */
@@ -129,9 +149,9 @@
       <ul class="nav navbar-nav navbar-right">
 
         <!-- <li><a href="#"id="sortHigh">Sort $ High</a></li> -->
-        <li><a href="#"id="sortHigh" style="font-size: 1.25em"><i class="fa fa-sort-up"></i><i class="fa fa-usd"></i></a></li>
+        <li><a href="#"id="sortHigh" style="font-size: 1.25em" class="sorter"><i class="fa fa-sort-up"></i><i class="fa fa-usd"></i></a></li>
         <!-- <li><a href="#"id="sortLow">Sort $ Low</a></li> -->
-        <li><a href="#"id="sortLow" style="font-size: 1.25em"><i class="fa fa-sort-down"></i><i class="fa fa-usd"></i></a></li>
+        <li><a href="#"id="sortLow" style="font-size: 1.25em" class="sorter"><i class="fa fa-sort-down"></i><i class="fa fa-usd"></i></a></li>
         <li><a href="#"><input type="text" placeholder="Search.." name="search" id="search">
           <button type="submit" id="searchButton"><i class="fa fa-search"></i></button>
         </a></li>
