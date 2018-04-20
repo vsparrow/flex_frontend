@@ -26,6 +26,8 @@
 function addEventListenerSearch(){
   // add event_listener search input and button
   let searchElement = document.querySelector("#search")
+  let searchButton = document.querySelector("#searchButton")
+
   searchElement.addEventListener("keydown",function(e){
     if(e.keyCode == 13){
       //enter was pressed, call function
@@ -35,10 +37,13 @@ function addEventListenerSearch(){
     //else do nothing
     // console.log("keydown in search");
   })
-  // load items that were found
-  // if nothing found display nothing found
+  searchButton.addEventListener("click", function(){
+    searchItems()
+  })
 
 }//addEventListenerSearch
+/////////
+
 
 ///////////
 function searchItems(){
