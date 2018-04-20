@@ -58,7 +58,7 @@
       }
     }
 
-    @media (max-width: 810px) { /*to collapse navbar at 810px for ipad view*/
+    @media (max-width: 930px) { /*to collapse navbar at 810px for ipad view*/
         .navbar-header {
             float: none;
         }
@@ -127,12 +127,16 @@
 
       <!-- </div> -->
       <ul class="nav navbar-nav navbar-right">
+
+        <!-- <li><a href="#"id="sortHigh">Sort $ High</a></li> -->
+        <li><a href="#"id="sortHigh" style="font-size: 1.25em"><i class="fa fa-sort-up"></i><i class="fa fa-usd"></i></a></li>
+        <!-- <li><a href="#"id="sortLow">Sort $ Low</a></li> -->
+        <li><a href="#"id="sortLow" style="font-size: 1.25em"><i class="fa fa-sort-down"></i><i class="fa fa-usd"></i></a></li>
         <li><a href="#"><input type="text" placeholder="Search.." name="search" id="search">
           <button type="submit" id="searchButton"><i class="fa fa-search"></i></button>
         </a></li>
 
-        <li><a href="#"id="sortHigh">Sort $ High</a></li>
-        <li><a href="#"id="sortLow">Sort $ Low</a></li>
+
       </ul>
     </div>
   </div>
