@@ -75,11 +75,12 @@ function displaySearchItems(results,searchval=""){
     // main.innerHTML = "Nothing found"
     main.innerHTML = `<div class="container"><div class="row ">`
     main.innerHTML += `<h1 style="font-size: 5em; text-align: center"><i class="fa fa-exclamation-triangle "></i></h1>`
-    main.innerHTML += `<h1 style="font-size: 5em; text-align: center">"${searchval}" Not Found</h1>`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center">Redirecting To Home</h1>`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center; color: red">"${searchval}" Not Found</h1>`
     // main.innerHTML += `<span>  <i class="fas fa-user"></i>
     // </span>`
     main.innerHTML += `</div></div>`
-
+    setTimeout(function(){displayItems()},5000)
 
   }
   else {
