@@ -23,12 +23,15 @@ function displayItem(id){
 
 
 ////////////////////////////////////////////////////////////////////////////////displayItems
-function displayItems(category="all"){
+function displayItems(category="all", itemarray = []){
   navShowCategories() //if item with new category added, navbar would update
   let displayhtml = ""
   displayhtml += `<div class="container">`
   let count = 0
-  ItemAll.forEach(function(item){
+  let items = itemarray
+  if(itemarray.length == 0) {items = ItemAll}
+  // ItemAll.forEach(function(item){
+  items.forEach(function(item){
    if(category == "all" || category == item.category.name.toLowerCase()){
      if(count==0){displayhtml += `<div class="row fp-row-items">`}
       let image = "./src/image/defaultflex.jpg"

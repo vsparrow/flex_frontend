@@ -55,5 +55,24 @@ function searchItems(){
     )
     {resultsArr.push(item)}
   })//forEach
-  console.log(resultsArr);
+  // console.log(resultsArr);
+  displaySearchItems(resultsArr)
 }
+/////////
+function displaySearchItems(results){
+  // if no results, display some message
+  // else display each item
+  console.log(results);
+  let main = document.querySelector("#main")
+  main.innerHTML = ""
+  if (results.length == 0){
+    // show something that says nothing found on screen
+    main.innerHTML = "Nothing found"
+  }
+  else {
+    //display results
+    displayItems("all",results) //display all items in results
+    // results.forEach(function(item){
+    // })
+  }//else
+}//displaySearchItems
