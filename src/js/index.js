@@ -13,9 +13,23 @@
        let newCategory = new Category(category.id,category.name)
        category.items.forEach(function(item){
          let newItem =
-          new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description) 
+          new Item(newCategory,item.id,item.title,item.brand,item.image,item.size,item.price,item.description)
        })//forEach item
      })//forEach category
      displayItems()
    }//parseJSONIntoClasses
+   addEventListenerSearch();
  })//document.addEventListener
+
+
+/////////////////////
+function addEventListenerSearch(){
+  // add event_listener search input and button
+  let searchElement = document.querySelector("#search")
+  searchElement.addEventListener("keydown",function(e){
+    console.log("keydown in search");
+  })
+  // load items that were found
+  // if nothing found display nothing found
+
+}
