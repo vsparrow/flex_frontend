@@ -61,10 +61,10 @@ function searchItems(){
     {resultsArr.push(item)}
   })//forEach
   // console.log(resultsArr);
-  displaySearchItems(resultsArr)
+  displaySearchItems(resultsArr,searchval)
 }
 /////////
-function displaySearchItems(results){
+function displaySearchItems(results,searchval=""){
   // if no results, display some message
   // else display each item
   console.log(results);
@@ -72,7 +72,15 @@ function displaySearchItems(results){
   main.innerHTML = ""
   if (results.length == 0){
     // show something that says nothing found on screen
-    main.innerHTML = "Nothing found"
+    // main.innerHTML = "Nothing found"
+    main.innerHTML = `<div class="container"><div class="row ">`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center"><i class="fa fa-exclamation-triangle "></i></h1>`
+    main.innerHTML += `<h1 style="font-size: 5em; text-align: center">"${searchval}" Not Found</h1>`
+    // main.innerHTML += `<span>  <i class="fas fa-user"></i>
+    // </span>`
+    main.innerHTML += `</div></div>`
+
+
   }
   else {
     //display results
