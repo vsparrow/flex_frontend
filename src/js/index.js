@@ -4,7 +4,8 @@
    addEventListenerNavContainer()
    addEventListenerToSortButtons()
    /////////////////////////////////////////////////////////////////////////////fetch
-   const urlbase = "http://127.0.0.1:3000/api/v1/"
+   // const urlbase = "http://127.0.0.1:3000/api/v1/"
+   const urlbase = "https://flex-the-api.herokuapp.com/api/v1/"
    let url = urlbase + "categories"
    fetch(url).then(res=>res.json()).then(json=>parseJSONIntoClasses(json))
    /////////////////////////////////////////////////////////////////////////////parseJSONIntoClasses
