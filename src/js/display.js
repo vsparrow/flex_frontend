@@ -1,10 +1,10 @@
-function imageFix(jsonImage){
-  //The site was designed to be hosted locally for mod3
-  //the json object rerers to local pc, so can edit on api side, or just made a function as I did here
-  let split = jsonImage.split("/")
-  let url = "https://flex-the-api.herokuapp.com/images/"
-  return (url + split[split.length-1]);
-}
+// function imageFix(jsonImage){
+//   //The site was designed to be hosted locally for mod3
+//   //the json object rerers to local pc, so can edit on api side, or just made a function as I did here
+//   let split = jsonImage.split("/")
+//   let url = "https://flex-the-api.herokuapp.com/images/"
+//   return (url + split[split.length-1]);
+// }
 
 //////////////////////////////////////////////////////////////////////////////// called by displayItem()
 function displayItem(id){
@@ -15,8 +15,8 @@ function displayItem(id){
   itemhtml += `<div class="container itemContainer"><div class="row">`
   let image = "./src/image/defaultflex.jpg"
   if (item.image != ""){
-    // image = item.image
-    image = imageFix(item.image)
+    image = item.image
+    // image = imageFix(item.image)
     // console.log(image);
   }
   itemhtml += `<div class="col-md-6"><img src="${image}" class="img-responsive"></div>`

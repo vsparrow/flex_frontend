@@ -6,7 +6,7 @@ class Item{
     this.id = id;
     this.title = title;
     this.brand = brand;
-    this.image = image;
+    this.image = imageFix(image);
     this.size = size;
     this.price = price;
     this.description = description
@@ -14,6 +14,17 @@ class Item{
   }//constructor
   static all(){return ItemAll}
 }//Item
+
+
+////////////////////////////////////////////////////////////////////////////////sortItemsByPrice
+function imageFix(jsonImage){
+  //The site was designed to be hosted locally for mod3
+  //the json object rerers to local pc, so can edit on api side, or just made a function as I did here
+  let split = jsonImage.split("/")
+  let url = "https://flex-the-api.herokuapp.com/images/"
+  return (url + split[split.length-1]);
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////sortItemsByPrice
